@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="currency" remove="true" />
+        <referenceBlock name="store.settings.currency" remove="true" />
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="header.links" remove="true"/>
+        <referenceBlock name="skip_to_content" remove="true"/>
+
+        <move element="navigation.sections" destination="menu-wrapper"/>
+        <move element="logo" destination="logo-wrapper"/>
+        <move element="top.search" destination="buttons-wrapper" before="-"/>
+        <move element="minicart" destination="buttons-wrapper" after="-"/>
+        <move element="compare-link-wrapper" destination="buttons-wrapper" before="header-wish-list"/>
+        <move element="authorization.link" destination="compare-link-wrapper" before="-"/>
+        <move element="authorization-link-login" destination="compare-link-wrapper" before="-"/>
+        <move element="form.subscribe" destination="subscribe.wrapper" before="footer"/>
+
+        <referenceContainer name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="header.block.social" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">social-block</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="header.block.contact" after="header.block.social">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-block-contact</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="header-wrapper">
+            <container name="logo-wrapper" label="Logo Wrapper" htmlTag="div" htmlClass="logo-wrapper"/>
+            <container name="menu-wrapper" label="Menu Wrapper" htmlTag="div" htmlClass="menu-wrapper" after="logo-wrapper"/>
+            <container name="buttons-wrapper" label="Buttons Wrapper"  htmlTag="div" htmlClass="buttons-wrapper" after="menu-wrapper">
+                <block class="Magento\Wishlist\Block\Link" name="header-wish-list" before="minicart" template="Magento_Theme::wishlist.phtml" />
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="main.content">
+            <container name="subscribe.wrapper" label="Subscribe Wrapper" htmlTag="div" htmlClass="subscribe-wrapper"/>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <container name="footer.col.1" htmlTag="div" htmlClass="footer-col-1" before="-">
+                <block class="Magento\Theme\Block\Html\Header\Logo" name="footer-logo">
+                    <arguments>
+                        <argument name="logoPathResolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoPathResolver</argument>
+                        <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer.block.social">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">social-block</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer.block.contact">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-block-contact</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="footer.links.custom" htmlTag="div" htmlClass="links-wrapper">
+                <container name="footer.col.2" htmlTag="div" htmlClass="footer-col-2">
+                    <block class="Magento\Cms\Block\Block" name="footer.block.2">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-block-2</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container name="footer.col.3" htmlTag="div" htmlClass="footer-col-3">
+                    <block class="Magento\Cms\Block\Block" name="footer.block.3">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-block-3</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container name="footer.col.4" htmlTag="div" htmlClass="footer-col-4">
+                    <block class="Magento\Cms\Block\Block" name="footer.block.4">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-block-4</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+
+    </body>
+</page>

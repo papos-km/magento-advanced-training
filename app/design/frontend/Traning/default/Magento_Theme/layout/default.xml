@@ -8,6 +8,7 @@
         <referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="header.links" remove="true"/>
         <referenceBlock name="skip_to_content" remove="true"/>
+        <referenceBlock name="cms_page" remove="true"/>
 
         <move element="navigation.sections" destination="menu-wrapper"/>
         <move element="logo" destination="logo-wrapper"/>

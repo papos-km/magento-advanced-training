@@ -5,7 +5,6 @@ namespace Traning\Setup\Setup\Patch\Data;
 
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Cms\Api\Data\BlockInterface;
-use Magento\Framework\Setup\Patch\PatchVersionInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Cms\Model\BlockFactory;
 use Magento\Cms\Api\BlockRepositoryInterface;
@@ -14,7 +13,7 @@ use Magento\Cms\Api\BlockRepositoryInterface;
  * Class CreateCmsBlocks
  * @package Traning\Setup\Setup\Patch\Data
  */
-class CreateCmsBlocks implements DataPatchInterface, PatchVersionInterface
+class CreateCmsBlocks implements DataPatchInterface
 
 {
     /**
@@ -259,17 +258,6 @@ class CreateCmsBlocks implements DataPatchInterface, PatchVersionInterface
     {
         return [];
     }
-
-
-    /**
-     * {@inheritdoc}
-     */
-
-    public static function getVersion()
-    {
-        return '2.0.0';
-    }
-
 
     /**
      * {@inheritdoc}

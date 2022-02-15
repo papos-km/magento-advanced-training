@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+
+    <referenceBlock name="header.links" remove="true" />
+    <referenceBlock name="footer_links" remove="true" />
+
+
+    <!-- Header -->
+    <referenceContainer name="header.container">
+    <container name="header.panel.wrapper" htmlClass="panel wrapper top-panel" htmlTag="div" before="-">
+        <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header">
+
+            <block class="Magento\Cms\Block\Block" name="header.cta">
+                <arguments>
+                    <argument name="block_id" xsi:type="string" translate="true">header-cta</argument>
+                </arguments>
+            </block>
+
+        </container>
+    </container>
+    </referenceContainer>
+
+    <referenceContainer name="header-wrapper">
+        <container name="header.wrapper.inner" label="headerWrapperInner" htmlTag="div" htmlClass="inner-header-wrapper">
+            <container name="header.left" label="headerLeft" htmlTag="div" htmlClass="left-col" />
+            <container name="header.center" label="headerCenter" htmlTag="div" htmlClass="center-col" />
+            <container name="header.right" label="headerRight" htmlTag="div" htmlClass="right-col">
+                <block class="Magento\Wishlist\Block\Link" name="wish-list-link-custom" before="minicart" template="Magento_Theme::wishlist.phtml" />
+            </container>
+        </container>
+    </referenceContainer>
+
+    <referenceContainer name="page.bottom.container">
+        <container name="section.subscribe" htmlTag="div" htmlClass="subscribe" />
+    </referenceContainer>
+
+    <!--  Footer  -->
+    <referenceBlock name="footer">
+        <container name="footer.wrapper" label="headerWrapper" htmlTag="div" htmlClass="footer-wrapper">
+            <container name="footer.col.one" label="footerCol" htmlTag="div" htmlClass="footer-column logo">
+                <block class="Magento\Theme\Block\Html\Header\Logo" name="footer-logo">
+                    <arguments>
+                        <argument name="logoPathResolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoPathResolver</argument>
+                        <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer.cta">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string" translate="true">footer-cta</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="footer.col.two" label="footerCol" htmlTag="div" htmlClass="footer-column links">
+                <block class="Magento\Cms\Block\Block" name="about.us">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string" translate="true">footer-about-us</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="product.range">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string" translate="true">footer-product-range</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="lorem.ipsum">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string" translate="true">footer-lorem-ipsum</argument>
+                    </arguments>
+                </block>
+            </container>
+        </container>
+    </referenceBlock>
+
+    <!-- Move -->
+    <move element="logo" destination="header.left" />
+    <move element="top.search" destination="header.right" before="-" />
+    <move element="minicart" destination="header.right" />
+    <move element="authorization-link" destination="header.right" after="top.search"/>
+    <move element="compare-link-wrapper" destination="header.right" before="wish-list-link-custom" />
+    <move element="catalog.topnav" destination="header.center" />
+
+    <move element="form.subscribe" destination="section.subscribe" />
+</page>
+
+
+

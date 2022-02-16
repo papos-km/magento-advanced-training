@@ -7,18 +7,13 @@ namespace Traning\Setup\Setup\Patch\Data;
 use Magento\Catalog\Model\CategoryFactory;
 use Magento\Catalog\Model\ResourceModel\Category;
 use Magento\Framework\Event\ManagerInterface;
-
 use Magento\Framework\Exception\AlreadyExistsException;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
-
 use Magento\Framework\Setup\Patch\DataPatchInterface;
-
 use Magento\Store\Model\GroupFactory;
 use Magento\Store\Model\ResourceModel\Group;
-
 use Magento\Store\Model\ResourceModel\Store;
 use Magento\Store\Model\ResourceModel\Website;
-
 use Magento\Store\Model\StoreFactory;
 use Magento\Store\Model\WebsiteFactory;
 
@@ -28,38 +23,47 @@ class CreateNewStore implements DataPatchInterface
      * @var ModuleDataSetupInterface
      */
     private $moduleDataSetup;
+
     /**
      * @var WebsiteFactory
      */
     private $websiteFactory;
+
     /**
      * @var Website
      */
     private $websiteResourceModel;
+
     /**
      * @var Store
      */
     private $storeViewResourceModel;
+
     /**
      * @var Group
      */
     private $groupResourceModel;
+
     /**
      * @var StoreFactory
      */
     private $storeViewFactory;
+
     /**
      * @var GroupFactory
      */
     private $groupFactory;
+
     /**
      * @var ManagerInterface
      */
     private $eventManager;
+
     /**
      * @var CategoryFactory
      */
     private $categoryFactory;
+
     /**
      * @var Category
      */
@@ -77,6 +81,7 @@ class CreateNewStore implements DataPatchInterface
      * @param Category $categoryResourceModel
      * @param ManagerInterface $eventManager
      */
+
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         WebsiteFactory $websiteFactory,
@@ -111,6 +116,7 @@ class CreateNewStore implements DataPatchInterface
 
         $website = $this->websiteFactory->create();
         $website->load('usa_website_1');
+
         if (!$website->getId()) {
             $website->setCode('usa_website_1');
             $website->setName('USA Website');
@@ -136,6 +142,7 @@ class CreateNewStore implements DataPatchInterface
 
         $store = $this->storeViewFactory->create();
         $store->load('usa_store_en');
+
         if (!$store->getId()) {
             $store->setCode('usa_store_en_1');
             $store->setName('English');
@@ -156,6 +163,7 @@ class CreateNewStore implements DataPatchInterface
     {
         return [];
     }
+
     /**
      * {@inheritdoc}
      */

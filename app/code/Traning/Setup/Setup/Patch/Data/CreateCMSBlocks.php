@@ -8,57 +8,56 @@ use Magento\Cms\Api\Data\BlockInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Cms\Model\BlockFactory;
 use Magento\Cms\Api\BlockRepositoryInterface;
+use Magento\Store\Model\Store;
 
 /**
  * Class CreateCmsBlocks
  * @package Traning\Setup\Setup\Patch\Data
  */
 class CreateCmsBlocks implements DataPatchInterface
-
 {
     /**
      * @var ModuleDataSetupInterface
      */
-
     private $moduleDataSetup;
-
 
     /**
      * @var BlockFactory
      */
-
     private $blockFactory;
 
     /**
      * @var BlockRepositoryInterface
      */
-
     private $blockRepository;
 
-
+    /**
+     * @var Store
+     */
+    private $store;
     /**
      * AddAccessViolationPageAndAssignB2CCustomers constructor.
      * @param ModuleDataSetupInterface $moduleDataSetup
      * @param PageFactory $blockFactory
      * @param BlockRepositoryInterface $blockRepository
+     * @param Store $store
      */
 
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         BlockFactory             $blockFactory,
-        BlockRepositoryInterface $blockRepository
-    )
-    {
+        BlockRepositoryInterface $blockRepository,
+        Store $store
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->blockFactory = $blockFactory;
         $this->blockRepository = $blockRepository;
+        $this->store = $store;
     }
-
 
     /**
      * {@inheritdoc}
      */
-
     public function apply()
     {
         $blocks = [];
@@ -100,7 +99,7 @@ class CreateCmsBlocks implements DataPatchInterface
                                 </ul>
                           </div>',
                 'is_active' => 1,
-                'stores' => \Magento\Store\Model\Store::DEFAULT_STORE_ID
+                'stores' => Store::DEFAULT_STORE_ID
             ]
         ]);
         $blocks[] = $this->blockFactory->create([
@@ -112,7 +111,7 @@ class CreateCmsBlocks implements DataPatchInterface
                                     <a class="phone-number" href="{{store url="tel:123-456-7890"}}">123-456-7890 <span class="zmdi zmdi-phone"></span></a>
                                 </div>',
                 'is_active' => 1,
-                'stores' => \Magento\Store\Model\Store::DEFAULT_STORE_ID
+                'stores' => Store::DEFAULT_STORE_ID
             ]
         ]);
         $blocks[] = $this->blockFactory->create([
@@ -127,7 +126,7 @@ class CreateCmsBlocks implements DataPatchInterface
                                     </a>
                         </div>',
                 'is_active' => 1,
-                'stores' => \Magento\Store\Model\Store::DEFAULT_STORE_ID
+                'stores' => Store::DEFAULT_STORE_ID
             ]
         ]);
         $blocks[] = $this->blockFactory->create([
@@ -167,7 +166,7 @@ class CreateCmsBlocks implements DataPatchInterface
                                     </ul>
                                </div>',
                 'is_active' => 1,
-                'stores' => \Magento\Store\Model\Store::DEFAULT_STORE_ID
+                'stores' => Store::DEFAULT_STORE_ID
             ]
         ]);
         $blocks[] = $this->blockFactory->create([
@@ -202,7 +201,7 @@ class CreateCmsBlocks implements DataPatchInterface
                                     </ul>
                                </div>',
                 'is_active' => 1,
-                'stores' => \Magento\Store\Model\Store::DEFAULT_STORE_ID
+                'stores' => Store::DEFAULT_STORE_ID
             ]
         ]);
         $blocks[] = $this->blockFactory->create([
@@ -237,23 +236,21 @@ class CreateCmsBlocks implements DataPatchInterface
                                     </ul>
                                </div>',
                 'is_active' => 1,
-                'stores' => \Magento\Store\Model\Store::DEFAULT_STORE_ID
+                'stores' => Store::DEFAULT_STORE_ID
             ]
         ]);
 
-
         $this->moduleDataSetup->startSetup();
+
         foreach ($blocks as $block) {
             $this->blockRepository->save($block);
         }
+
         $this->moduleDataSetup->endSetup();
     }
-
-
     /**
      * {@inheritdoc}
      */
-
     public static function getDependencies()
     {
         return [];
@@ -262,7 +259,6 @@ class CreateCmsBlocks implements DataPatchInterface
     /**
      * {@inheritdoc}
      */
-
     public function getAliases()
     {
         return [];

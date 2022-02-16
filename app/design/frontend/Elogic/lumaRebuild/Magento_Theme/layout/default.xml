@@ -46,7 +46,7 @@
     <!--  Footer  -->
     <referenceBlock name="footer">
         <container name="footer.wrapper" label="headerWrapper" htmlTag="div" htmlClass="footer-wrapper">
-            <container name="footer.col.one" label="footerCol" htmlTag="div" htmlClass="footer-column logo">
+            <container name="footer.col.one" label="footerCol" htmlTag="div" htmlClass="footer-column footer-logo">
                 <block class="Magento\Theme\Block\Html\Header\Logo" name="footer-logo">
                     <arguments>
                         <argument name="logoPathResolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoPathResolver</argument>

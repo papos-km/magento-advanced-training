@@ -1,8 +1,4 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
 
 /** @var $block Magento\Framework\View\Element\Template */
 ?>
@@ -12,7 +8,7 @@
     >
         <span class="zmdi zmdi-swap"></span>
         <span class="text"><?= $block->escapeHtml(__('Compare Products')) ?></span>
-        <span class="counter qty" data-bind="text: compareProducts().items.length"></span>
+        <span class="counter qty" data-bind="text: compareProducts().countCaption"></span>
     </a>
 </li>
 <script type="text/x-magento-init">

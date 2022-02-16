@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
-<!--
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
-
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-
 
     <referenceBlock name="header.links" remove="true" />
     <referenceBlock name="footer_links" remove="true" />
 
+    <!-- Move -->
+    <move element="logo" destination="header.left" />
+    <move element="top.search" destination="header.right" before="-" />
+    <move element="minicart" destination="header.right" />
+    <move element="authorization-link" destination="header.right" after="top.search"/>
+    <move element="compare-link-wrapper" destination="header.right" before="wish-list-link-custom" />
+    <move element="catalog.topnav" destination="header.center" />
+    <move element="form.subscribe" destination="section.subscribe" />
 
     <!-- Header -->
     <referenceContainer name="header.container">
@@ -34,6 +34,7 @@
             <container name="header.center" label="headerCenter" htmlTag="div" htmlClass="center-col" />
             <container name="header.right" label="headerRight" htmlTag="div" htmlClass="right-col">
                 <block class="Magento\Wishlist\Block\Link" name="wish-list-link-custom" before="minicart" template="Magento_Theme::wishlist.phtml" />
+                <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link" template="Magento_Customer::account/link/authorization.phtml"/>
             </container>
         </container>
     </referenceContainer>
@@ -78,15 +79,6 @@
         </container>
     </referenceBlock>
 
-    <!-- Move -->
-    <move element="logo" destination="header.left" />
-    <move element="top.search" destination="header.right" before="-" />
-    <move element="minicart" destination="header.right" />
-    <move element="authorization-link" destination="header.right" after="top.search"/>
-    <move element="compare-link-wrapper" destination="header.right" before="wish-list-link-custom" />
-    <move element="catalog.topnav" destination="header.center" />
-
-    <move element="form.subscribe" destination="section.subscribe" />
 </page>
 
 

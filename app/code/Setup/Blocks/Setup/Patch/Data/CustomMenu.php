@@ -85,81 +85,81 @@ class CustomMenu implements DataPatchInterface
 
         $data = [
             [
-                'parent_id' => $parentId,
-                'name'            => 'Home',
-                'url_key'         => 'home',
-                'is_active'          => 1,
-                'is_anchor'       => 1,
-                'include_in_menu' => 1,
-                'display_mode'    => Category::DM_PAGE,
-                'position'        => '1',
-                'page_layout'     => '',
-                'custom_layout_update' => ''
+                'parent_id'             => $parentId,
+                'name'                  => 'Home',
+                'url_key'               => 'home',
+                'is_active'             => 1,
+                'is_anchor'             => 1,
+                'include_in_menu'       => 1,
+                'display_mode'          => Category::DM_PAGE,
+                'position'              => '1',
+                'page_layout'           => '',
+                'custom_layout_update'  => ''
             ],
 
             [
-                'parent_id' => $parentId,
-                'name'            => 'Catalog',
-                'url_key'         => 'catalog',
-                'is_active'          => 1,
-                'is_anchor'       => 1,
-                'include_in_menu' => 1,
-                'display_mode'    => Category::DM_PAGE,
-                'position'        => '1',
-                'page_layout'     => '',
-                'custom_layout_update' => ''
+                'parent_id'             => $parentId,
+                'name'                  => 'Catalog',
+                'url_key'               => 'catalog',
+                'is_active'             => 1,
+                'is_anchor'             => 1,
+                'include_in_menu'       => 1,
+                'display_mode'          => Category::DM_PAGE,
+                'position'              => '1',
+                'page_layout'           => '',
+                'custom_layout_update'  => ''
             ],
 
             [
-                'parent_id' => $parentId,
-                'name'            => 'For Her',
-                'url_key'         => 'for-her',
-                'is_active'          => 1,
-                'is_anchor'       => 1,
-                'include_in_menu' => 1,
-                'display_mode'    => Category::DM_PAGE,
-                'position'        => '1',
-                'page_layout'     => '',
-                'custom_layout_update' => ''
+                'parent_id'             => $parentId,
+                'name'                  => 'For Her',
+                'url_key'               => 'for-her',
+                'is_active'             => 1,
+                'is_anchor'             => 1,
+                'include_in_menu'       => 1,
+                'display_mode'          => Category::DM_PAGE,
+                'position'              => '1',
+                'page_layout'           => '',
+                'custom_layout_update'  => ''
             ],
 
             [
-                'parent_id' => $parentId,
-                'name'            => 'For Him',
-                'url_key'         => 'for-him',
-                'is_active'          => 1,
-                'is_anchor'       => 1,
-                'include_in_menu' => 1,
-                'display_mode'    => Category::DM_PAGE,
-                'position'        => '1',
-                'page_layout'     => '',
-                'custom_layout_update' => ''
+                'parent_id'             => $parentId,
+                'name'                  => 'For Him',
+                'url_key'               => 'for-him',
+                'is_active'             => 1,
+                'is_anchor'             => 1,
+                'include_in_menu'       => 1,
+                'display_mode'          => Category::DM_PAGE,
+                'position'              => '1',
+                'page_layout'           => '',
+                'custom_layout_update'  => ''
             ],
 
             [
-                'parent_id' => $parentId,
-                'name'            => 'Blog',
-                'url_key'         => 'blog',
-                'is_active'          => 1,
-                'is_anchor'       => 1,
-                'include_in_menu' => 1,
-                'display_mode'    => Category::DM_PAGE,
-                'position'        => '1',
-                'page_layout'     => '',
-                'custom_layout_update' => ''
+                'parent_id'             => $parentId,
+                'name'                  => 'Blog',
+                'url_key'               => 'blog',
+                'is_active'             => 1,
+                'is_anchor'             => 1,
+                'include_in_menu'       => 1,
+                'display_mode'          => Category::DM_PAGE,
+                'position'              => '1',
+                'page_layout'           => '',
+                'custom_layout_update'  => ''
             ],
 
 
-            [    'parent_id' => $parentId,
-                'name'            => 'About Us',
-                'url_key'         => 'about-us',
-                'is_active'          => 1,
-                'is_anchor'       => 1,
-                'include_in_menu' => 1,
-                'display_mode'    => Category::DM_PAGE,
-                'position'        => '1',
-                'page_layout'     => '',
-                'custom_layout_update' => ''
+            [    'parent_id'            => $parentId,
+                'name'                  => 'About Us',
+                'url_key'               => 'about-us',
+                'is_active'             => 1,
+                'is_anchor'             => 1,
+                'include_in_menu'       => 1,
+                'display_mode'          => Category::DM_PAGE,
+                'position'              => '1',
+                'page_layout'           => '',
+                'custom_layout_update'  => ''
             ]
 
         ];
@@ -199,4 +199,5 @@ class CustomMenu implements DataPatchInterface
     {
         return [];
     }
+
 }

@@ -6,14 +6,12 @@ use Magento\Framework\Exception\NoSuchEntityException as NoSuchEntityExceptionAl
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\App\Config\Storage\WriterInterface;
 
-
 class Copyright implements DataPatchInterface
 {
     /**
      * @var WriterInterface
      */
     private $writer;
-
 
     /**
      * SetCopyright constructor.
@@ -26,7 +24,6 @@ class Copyright implements DataPatchInterface
     ) {
         $this->writer = $writer;
     }
-
 
     /**
      * @inheritdoc

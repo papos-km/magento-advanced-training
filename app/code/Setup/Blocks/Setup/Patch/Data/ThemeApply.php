@@ -17,7 +17,6 @@ class ThemeApply implements DataPatchInterface, PatchRevertableInterface
     protected ModuleDataSetupInterface $moduleDataSetup;
     protected WriterInterface $writer;
 
-
     public function __construct(
         WriterInterface $writer,
         CollectionFactory $collectionFactory,

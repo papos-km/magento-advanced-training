@@ -10,10 +10,18 @@
     <move element="minicart" destination="header.right" />
     <move element="authorization-link" destination="header.right" after="top.search"/>
     <move element="compare-link-wrapper" destination="header.right" before="wish-list-link-custom" />
-    <move element="catalog.topnav" destination="header.center" />
+    <move element="page.top" destination="header.center" />
     <move element="form.subscribe" destination="section.subscribe" />
 
     <!-- Header -->
+    <referenceBlock name="store.menu">
+        <block class="Magento\Cms\Block\Block" name="menu.cta">
+            <arguments>
+                <argument name="block_id" xsi:type="string" translate="true">header-cta</argument>
+            </arguments>
+        </block>
+    </referenceBlock>
+
     <referenceContainer name="header.container">
     <container name="header.panel.wrapper" htmlClass="panel wrapper top-panel" htmlTag="div" before="-">
         <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header">

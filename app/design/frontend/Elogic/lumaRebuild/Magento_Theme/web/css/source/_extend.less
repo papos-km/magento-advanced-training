@@ -82,6 +82,14 @@
                 }
 
                 .center-col {
+                    .nav-sections {
+                        margin: 0;
+
+                        .nav-sections-items {
+                            background: @color-white;
+                        }
+                    }
+
                     nav {
                         background: transparent;
 
@@ -200,6 +208,11 @@
                 .authorization-link {
                     margin-left: 35px;
 
+                    a {
+                        text-decoration: none;
+                        padding: 5px;
+                    }
+
                     .text {
                         display: none;
                     }
@@ -240,11 +253,12 @@
 
                 .block-search {
                     width: 0;
-                    top: 5px;
+                    bottom: 0;
+                    left: 5px;
 
                     .custom-search {
                         position: absolute;
-                        top: 5px;
+                        top: 4px;
                         left: 0;
                         width: 0;
                         line-height: 30px;
@@ -254,6 +268,14 @@
                         font-size: 1em;
                         border-radius: 20px;
                         padding: 0 10px;
+
+                        &[aria-expanded="true"],
+                        &:hover,
+                        &:focus {
+                            border: 3px solid @color-dark-blue;
+                            box-shadow: none;
+                            z-index: 10;
+                        }
                     }
 
                     .minisearch {
@@ -261,13 +283,15 @@
                         top: 0;
                         left: 95%;
                         transform: translate(-100%, 0);
-                        transition: all 1s;
-                        width: 50px;
-                        height: 50px;
+                        transition: ease-in all .2s;
+                        width: 30px;
+                        height: 30px;
                         background: white;
                         box-sizing: border-box;
                         border-radius: 25px;
                         padding: 5px;
+                        margin: 0 0 10px;
+                        z-index: 10;
 
                         &:focus {
                             box-shadow: none;
@@ -281,12 +305,14 @@
                             & .custom-search {
                                 display: block;
                                 width: 100%;
+                                margin: 0;
                             }
                         }
                     }
 
                     .search-button {
                         opacity: 1;
+                        z-index: 11;
 
                         &::before {
                             display: none;
@@ -306,7 +332,6 @@
                                 text-align: center;
                                 font-size: @font-size-25;
                                 transition: all 1s;
-                                z-index: 20;
 
                                 &:before {
                                     color: @color-dark-blue;
@@ -455,6 +480,203 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    //-------- footer -------- //
+
+    .nav-before-open {
+        overflow-x: initial;
+
+        &.nav-open {
+            .nav-toggle {
+                background: url('@{baseDir}images/close.svg') no-repeat !important;
+
+                &:after {
+                    background: none;
+                }
+            }
+
+            .page-wrapper {
+                left: 0;
+
+                .nav-sections {
+                    left: 0;
+
+                    .section-item-content {
+                        padding: 0;
+                        margin: 0;
+
+                        .header-cta {
+                            align-items: center;
+                            display: flex;
+                            flex-direction: column;
+                            margin: 30px 10px;
+
+                            .social-links {
+                                display: flex;
+                                margin-bottom: 25px;
+
+                                .social-item {
+                                    a {
+                                        padding: 0 20px;
+                                    }
+
+                                    i:before {
+                                        font-size: @font-size-16;
+                                    }
+                                }
+                            }
+
+                            .contact-us-text {
+                                font-style: normal;
+                                font-weight: normal;
+                                position: relative;
+                                font-size: @font-size-14;
+                                color: @color-light-gray-opacity;
+                                line-height: 20px;
+                                letter-spacing: 0.1px;
+
+                                .number {
+                                    text-align: center;
+                                    display: block;
+                                    font-style: normal;
+                                    font-weight: 600;
+                                    font-size: @font-size-14;
+                                    color: @color-light-blue;
+                                    margin-top: 5px;
+                                }
+
+                                .call-now {
+                                    position: absolute;
+                                    bottom: -5px;
+                                    right: 25px;
+                                    padding: 5px;
+
+                                    .zmdi-phone {
+                                        transform: rotate(-95deg);
+
+                                        &:before {
+                                            font-size: @font-size-14;
+                                            color: @color-light-blue;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .page-header {
+        .panel {
+            display: none;
+        }
+
+        .inner-header-wrapper {
+            .left-col {
+                a.logo {
+                    margin-left: 20px;
+                    padding: 17px;
+                }
+
+                .nav-toggle {
+                    background: url('@{baseDir}images/burger.svg');
+                    background-repeat: no-repeat;
+                    height: 20px;
+                    width: 20px;
+                    top: 25px;
+
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+
+            .right-col {
+                flex-direction: row-reverse;
+
+                .compare,
+                .wishlist,
+                .minicart-wrapper {
+                    display: none;
+                }
+
+                .authorization-link {
+                    margin-left: 0;
+                    margin-right: 40px;
+
+                    .zmdi-account:before {
+                        font-size: @font-size-20;
+                    }
+                }
+
+                .label {
+                    &:before {
+                        font-size: @font-size-16;
+                        color: @color-dark-blue;
+                        margin: 1px 0 0 0;
+
+                    }
+                }
+
+                .block-search {
+                    margin: 0;
+
+                    .control {
+                        border: none;
+                    }
+                }
+
+            }
+
+            .nav-sections {
+                width: 100%;
+                max-height: 95%;
+                margin-top: 60px !important;
+                left: calc(-1 * (100% - 0px));
+                z-index: 20;
+
+                .section-item-content {
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .nav-sections-item-title {
+                    display: none;
+                }
+
+                .navigation {
+                    .category-item {
+                        margin-right: 0;
+
+                        &.active {
+                            background-color: @color-light-blue-background;
+
+                            a {
+                                border: none;
+                                margin-left: 8px;
+                                span {
+                                    color: @color-light-blue;
+                                }
+                            }
+                        }
+
+                        a {
+                            span {
+                                color: @color-main-dark;
+                                opacity: 1;
+                                padding: 10px 15px;
+                                border: none;
+                                text-transform: none;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
 
     //-------- footer -------- //
     .page-footer {
@@ -494,27 +716,22 @@
                     }
 
                     .call-now {
-                        padding: 19px 101px;
+                        padding: 19px 104px;
                     }
                 }
 
                 .links {
                     flex-direction: column;
 
+                    .tittle {
+                        margin: 5px 0 20px;
+                    }
+
                     a {
                         padding: 0;
                     }
                 }
             }
-        }
-    }
-
-    //-------- copyright -------- //
-    .copyright {
-        padding: 15px 70px;
-
-        span {
-            font-size: @font-size-12;
         }
     }
 
@@ -532,7 +749,17 @@
     }
 }
 
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+    @media only screen and (max-width: 375px) {
+        //-------- copyright -------- //
+        .copyright {
+            padding: 15px 70px;
 
-
+            span {
+                font-size: @font-size-12;
+            }
+        }
+    }
+}
 
 

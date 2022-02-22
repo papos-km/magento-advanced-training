@@ -1,0 +1,25 @@
+body {
+    color: @color-text;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    text-transform: uppercase;
+    color: @color-white;
+    background-color: @color-blue;
+    min-height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: @color-button-hover;
+        text-decoration: none;
+        color: @color-white;
+    }
+}

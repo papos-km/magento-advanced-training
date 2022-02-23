@@ -15,5 +15,11 @@
                 </argument>
             </action>
         </referenceBlock>
+        <referenceBlock name="content">
+            <block
+                name="magemastery.todo.block.list"
+                template="MageMastery_Todo::todo.phtml"
+            />
+        </referenceBlock>
     </body>
 </page>

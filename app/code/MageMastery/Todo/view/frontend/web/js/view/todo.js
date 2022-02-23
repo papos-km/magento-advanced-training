@@ -3,6 +3,10 @@ define(
     function (Component) {
         'use strict';
 
-        return Component.extend({});
+        return Component.extend({
+            defaults: {
+                template: 'MageMastery_Todo/todo'
+            }
+        });
     }
 );

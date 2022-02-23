@@ -15,7 +15,7 @@ define(
 
             initObservable: function () {
                 this._super().observe(['tasks']);
-                
+
                 return this;
             }
         });

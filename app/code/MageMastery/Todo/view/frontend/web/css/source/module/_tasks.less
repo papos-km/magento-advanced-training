@@ -1,0 +1,41 @@
+& when (@media-common = true) {
+    .tasks {
+        padding: 1.8rem;
+
+        li {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+
+            .label {
+                margin-left: .625rem;
+                min-width: 80%;
+            }
+
+            .status {
+                border-radius: 50%;
+                border-style: solid;
+                border-width: .125rem;
+                display: block;
+                width: 1.75rem;
+                height: 1.75rem;
+                text-indent: -9999rem;
+                overflow: hidden;
+
+                &.open {
+                    border-color: @color-silver;
+                }
+
+                &.complete {
+                    border-color: @color-mantis;
+                }
+
+                &:hover {
+                    border-color: @color-mantis;
+                    background-color: @color-mantis;
+                }
+            }
+        }
+    }
+}

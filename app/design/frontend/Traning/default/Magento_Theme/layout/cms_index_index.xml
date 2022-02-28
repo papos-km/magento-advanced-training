@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="hero.banner.wrapper" htmlTag="div" htmlClass="hero-banner-wrapper" before="-">
+                <block class="Magento\Cms\Block\Block" name="hero-banner">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">main-banner</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="advances.container" htmlTag="div" htmlClass="advances-container" after="hero.banner.wrapper">
+                <block class="Magento\Cms\Block\Block" name="advances-block">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">advances-block</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="promo.container" htmlTag="div" htmlClass="promo-container" after="advances.container">
+                <block class="Magento\Cms\Block\Block" name="promo-block">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">promo-block</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="subscribe.wrapper" label="Subscribe Wrapper" htmlTag="div" htmlClass="subscribe-wrapper">
+                <container name="subscribe.blocks.wrapper" label="Subscribe blocks wrapper" htmlTag="div" htmlClass="subscribe-blocks-wrapper">
+                    <block class="Magento\Cms\Block\Block" name="subscribe.block" after="-">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">subscribe-block</argument>
+                        </arguments>
+                    </block>
+                    <container name="subscribe.form.container" htmlTag="div" htmlClass="subscribe-form-container" after="subscribe.block"/>
+                </container>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

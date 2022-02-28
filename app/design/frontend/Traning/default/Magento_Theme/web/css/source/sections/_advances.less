@@ -1,0 +1,107 @@
+& when (@media-common = true) {
+    .advances-container {
+        margin-top: 60px;
+    }
+
+    .advances-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .advance-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .advance-icon-wrapper {
+        width: 95px;
+        height: 95px;
+        border-radius: 50%;
+        background-color: @color-white;
+        box-shadow: 10px 10px 40px rgba(174, 174, 192, 0.2), -10px -10px 30px rgba(255, 255, 255, 0.4);
+        margin-right: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .advance-icon {
+            &:before {
+                content: '';
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+        .icon-vector {
+            &:before {
+                background-image:  url('@{baseDir}images/icons/vector.svg');
+            }
+        }
+
+        .icon-wallet {
+            &:before {
+                background-image:  url('@{baseDir}images/icons/financial.svg');
+            }
+        }
+
+        .icon-finance {
+            &:before {
+                background-image:  url('@{baseDir}images/icons/wallet.svg');
+            }
+        }
+
+        .icon-group {
+            &:before {
+                background-image:  url('@{baseDir}images/icons/group.svg');
+            }
+        }
+    }
+
+    .advance-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 150px;
+
+        .advance-title {
+            font-size: @font-size-h6;
+            font-weight: @font-weight-700;
+            margin-bottom: 15px;
+        }
+
+        .advance-condition {
+            font-size: @font-size-general;
+            font-weight: @font-weight-300;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-wrapper {
+        .advances-container {
+            margin-top: 30px;
+        }
+
+        .advances-wrapper {
+            flex-direction: column;
+        }
+
+        .advance-item {
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

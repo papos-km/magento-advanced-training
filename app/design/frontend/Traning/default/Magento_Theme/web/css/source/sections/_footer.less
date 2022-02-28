@@ -1,0 +1,178 @@
+& when (@media-common = true) {
+    .page-wrapper {
+        .page-footer {
+            background-color: @color-white;
+            border-top: 1px solid @color-light-grey-1;
+            margin-top: 120px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+
+            .footer-col-1 {
+                display: flex;
+                flex-direction: column;
+
+                .footer-contact-text {
+                    opacity: 50%;
+                    margin-right: 5px;
+                }
+
+                .contact-number {
+                    font-weight: @font-weight-400;
+                    font-size: @font-size-general;
+                    color: @color-blue;
+                }
+            }
+
+            .call-btn {
+                margin-top: 25px;
+            }
+
+            .logo,
+            .social-wrapper {
+                margin-bottom: 50px;
+            }
+
+            .footer-logo-social {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .links-wrapper {
+                min-width: 50%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .footer-links-wrapper {
+                .footer-links-title {
+                    margin-bottom: 25px;
+
+                    .title {
+                        text-transform: uppercase;
+                        font-weight: @font-weight-500;
+                        font-size: 12px;
+                        line-height: 15px;
+                    }
+                }
+            }
+
+            .footer.links {
+                .nav {
+                    a {
+                        font-weight: @font-weight-400;
+                        font-size: @font-size-general;
+                        line-height: @line-height-20;
+                        opacity: 70%;
+
+                        &:hover {
+                            text-decoration: none;
+                            color: @color-blue;
+                        }
+                    }
+                }
+            }
+        }
+
+        .social-wrapper {
+            .social-link-styles();
+        }
+
+        .copyright {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: @color-footer;
+            min-height: 50px;
+
+            span {
+                font-weight: @font-weight-200;
+                letter-spacing: 0.2px;
+                font-size: @font-size-general;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-wrapper {
+        .footer.content {
+            display: block;
+
+            .links-wrapper {
+                min-width: 0;
+                flex-direction: column;
+            }
+
+            .footer.links {
+                flex-direction: column;
+
+                .nav {
+                    border: none;
+                    background-color: @color-white;
+
+                    a {
+                        padding: 15px 0 0 0;
+                    }
+                }
+            }
+
+            .footer-logo-social {
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .nav-toggle {
+                    display: none;
+                }
+            }
+
+            .logo {
+                margin-left: 0;
+            }
+
+            .logo,
+            .social-wrapper {
+                margin-bottom: 35px;
+            }
+
+            .call-btn {
+                margin-top: 15px;
+                min-height: 55px;
+                margin-bottom: 5px;
+            }
+
+            .social-list {
+                display: flex;
+
+                li {
+                    margin-right: 25px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .footer-links-wrapper {
+                .footer-links-title {
+                    margin:25px 0 5px 0;
+                }
+            }
+        }
+
+        .copyright {
+            margin-top: 40px;
+        }
+    }
+}

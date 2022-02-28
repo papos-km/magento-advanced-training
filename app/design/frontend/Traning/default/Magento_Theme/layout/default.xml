@@ -16,8 +16,10 @@
         <move element="minicart" destination="buttons-wrapper" after="-"/>
         <move element="compare-link-wrapper" destination="buttons-wrapper" before="header-wish-list"/>
         <move element="authorization.link" destination="compare-link-wrapper" before="-"/>
+        <move element="register-link" destination="compare-link-wrapper"/>
         <move element="authorization-link-login" destination="compare-link-wrapper" before="-"/>
-        <move element="form.subscribe" destination="subscribe.wrapper" before="footer"/>
+        <move element="form.subscribe" destination="subscribe.form.container" before="-"/>
+        <move element="store_language" destination="header.panel.left.block" after="header.block.contact"/>
 
         <referenceContainer name="header.panel">
             <block class="Magento\Cms\Block\Block" name="header.block.social" before="-">
@@ -25,11 +27,13 @@
                     <argument name="block_id" xsi:type="string">social-block</argument>
                 </arguments>
             </block>
-            <block class="Magento\Cms\Block\Block" name="header.block.contact" after="header.block.social">
-                <arguments>
-                    <argument name="block_id" xsi:type="string">header-block-contact</argument>
-                </arguments>
-            </block>
+            <container name="header.panel.left.block" htmlTag="div" htmlClass="top-blocks-wrapper" after="-">
+                <block class="Magento\Cms\Block\Block" name="header.block.contact">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header-block-contact</argument>
+                    </arguments>
+                </block>
+            </container>
         </referenceContainer>
 
         <referenceContainer name="header-wrapper">
@@ -39,24 +43,33 @@
                 <block class="Magento\Wishlist\Block\Link" name="header-wish-list" before="minicart" template="Magento_Theme::wishlist.phtml" />
             </container>
         </referenceContainer>
-
-        <referenceContainer name="main.content">
-            <container name="subscribe.wrapper" label="Subscribe Wrapper" htmlTag="div" htmlClass="subscribe-wrapper"/>
-        </referenceContainer>
-
+        <referenceBlock name="store.menu">
+            <block class="Magento\Cms\Block\Block" name="mobile.block.social">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">social-block</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="mobile.block.contact" after="mobile.block.social">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-block-contact</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
         <referenceContainer name="footer">
             <container name="footer.col.1" htmlTag="div" htmlClass="footer-col-1" before="-">
-                <block class="Magento\Theme\Block\Html\Header\Logo" name="footer-logo">
-                    <arguments>
-                        <argument name="logoPathResolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoPathResolver</argument>
-                        <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
-                    </arguments>
-                </block>
-                <block class="Magento\Cms\Block\Block" name="footer.block.social">
-                    <arguments>
-                        <argument name="block_id" xsi:type="string">social-block</argument>
-                    </arguments>
-                </block>
+                <container name="footer.logo.social" htmlTag="div" htmlClass="footer-logo-social" before="-">
+                    <block class="Magento\Theme\Block\Html\Header\Logo" name="footer-logo">
+                        <arguments>
+                            <argument name="logoPathResolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoPathResolver</argument>
+                            <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Cms\Block\Block" name="footer.block.social">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">social-block</argument>
+                        </arguments>
+                    </block>
+                </container>
                 <block class="Magento\Cms\Block\Block" name="footer.block.contact">
                     <arguments>
                         <argument name="block_id" xsi:type="string">footer-block-contact</argument>

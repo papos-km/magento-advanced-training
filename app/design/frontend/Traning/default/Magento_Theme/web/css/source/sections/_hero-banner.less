@@ -1,0 +1,129 @@
+& when (@media-common = true) {
+    #html-body {
+        .hero-banner-wrapper {
+            margin-top: 20px;
+        }
+
+        .pagebuilder-slide-wrapper[data-background-type="image"] {
+            min-height: 550px;
+            background-size: cover;
+        }
+
+        .pagebuilder-slider {
+            position: relative;
+        }
+
+        .slick-dots {
+            position: absolute;
+            bottom: -10px;
+            left: 12%;
+            max-width: 10%;
+        }
+
+        .pagebuilder-overlay {
+            max-width: 570px;
+        }
+
+        .pagebuilder-collage-content {
+            margin: 70px 0 0 70px;
+
+            [data-element="content"] {
+                h4 {
+                    font-size: @font-size-h6;
+                    margin-bottom: 10px;
+                }
+
+                h1 {
+                    font-family: @font-family__code-next;
+                    font-size: @font-size-h1;
+                    font-weight: @font-weight-800;
+                }
+
+                & > h1:first-of-type {
+                    color: @color-blue;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    font-size: @font-size-h5;
+                    line-height: 28px;
+                    font-weight: @font-weight-300;
+                }
+            }
+
+            .pagebuilder-slide-button {
+                text-transform: uppercase;
+                font-weight: @font-weight-400;
+                font-size: @font-size-general;
+                padding: 24px 87px;
+                background-color: @color-blue;
+                border: none;
+
+                &:hover {
+                    background-color: @color-button-hover;
+                }
+            }
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    #html-body {
+        .page-wrapper {
+            .hero-banner-wrapper {
+                margin-top: 0px;
+            }
+
+            .pagebuilder-slide-wrapper[data-background-type="image"] {
+                background-size: contain;
+                background-position: center bottom;
+                background-color: @color-light-grey-2;
+
+                .pagebuilder-collage-content {
+                    margin: 0;
+
+                    [data-element="content"] {
+                        h4 {
+                            font-size:@font-size-10;
+                            margin: 0 0 5px 0;
+                        }
+
+                        h1 {
+                            font-size: @font-size-30;
+                        }
+
+                        & > h1:last-of-type {
+                            margin-bottom: 15px;
+                        }
+
+                        p {
+                            font-size: 12px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+
+                .pagebuilder-slide-button {
+                    padding: 20px 85px;
+                }
+            }
+
+            .slick-dots {
+                left: 0;
+            }
+
+            .pagebuilder-overlay {
+                max-width: 320px;
+                padding: 20px;
+            }
+        }
+    }
+}

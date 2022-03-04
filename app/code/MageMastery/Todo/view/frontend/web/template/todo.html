@@ -1,3 +1,27 @@
+<div class="form-container">
+    <input
+        type="text"
+        id="todo-task-input"
+        class="task-input-field"
+        name="task"
+        value=""
+        placeholder="Add a new task..."
+    />
+    <div class="actions-toolbar">
+        <div class="primary">
+            <buttton
+                type="button"
+                title="Add Task"
+                class="action save primary"
+                id="add-new-task-button"
+            >
+                <span data-bind="
+                    i18n: 'Add Task',
+                "></span>
+            </buttton>
+        </div>
+    </div>
+</div>
 <!-- ko if: ($data.tasks) -->
 <ul class="tasks">
     <li repeat="foreach: tasks, item:'task'">

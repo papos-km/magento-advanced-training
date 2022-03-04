@@ -1,15 +1,34 @@
 define(
-    ['uiComponent'],
-    function (Component) {
+    [
+        'uiComponent',
+        'jquery'
+    ],
+    function (Component, $) {
         'use strict';
 
         return Component.extend({
             defaults: {
                 tasks: [
-                    {label: "Task 1"},
-                    {label: "Task 2"},
-                    {label: "Task 3"},
-                    {label: "Task 4"}
+                    {
+                        id: 1,
+                        label: "Task 1",
+                        status: false
+                    },
+                    {
+                        id: 2,
+                        label: "Task 2",
+                        status: false
+                    },
+                    {
+                        id: 3,
+                        label: "Task 3",
+                        status: false
+                    },
+                    {
+                        id: 4,
+                        label: "Task 4",
+                        status: true
+                    }
                 ]
             },
 
@@ -17,6 +36,20 @@ define(
                 this._super().observe(['tasks']);
 
                 return this;
+            },
+
+            switchStatus: function (data, event) {
+                const taskId = $(event.target).data('id');
+
+                let items = this.tasks().map((task) => {
+                    if (task.id === taskId) {
+                        task.status = !task.status;
+                    }
+
+                   return task;
+                });
+
+                this.tasks(items);
             }
         });
     }

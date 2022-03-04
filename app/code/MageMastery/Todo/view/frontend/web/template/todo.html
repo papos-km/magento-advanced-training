@@ -16,7 +16,8 @@
                 attr: {
                     'data-id': task().id
                 },
-                i18n: 'Delete'
+                i18n: 'Delete',
+                click: deleteTask.bind($data, task().id)
             "
         ></a>
     </li>

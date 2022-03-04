@@ -9,6 +9,16 @@
             click: switchStatus
         ">Open</a>
         <span class="label" translate="task().label"></span>
+        <a
+            href="#"
+            class="action delete"
+            data-bind="
+                attr: {
+                    'data-id': task().id
+                },
+                i18n: 'Delete'
+            "
+        ></a>
     </li>
 </ul>
 <!-- /ko -->

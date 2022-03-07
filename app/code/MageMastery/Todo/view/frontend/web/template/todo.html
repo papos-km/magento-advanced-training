@@ -4,7 +4,7 @@
         id="todo-task-input"
         class="task-input-field"
         name="task"
-        value=""
+        data-bind="value: newTaskLabel"
         placeholder="Add a new task..."
     />
     <div class="actions-toolbar">
@@ -14,6 +14,7 @@
                 title="Add Task"
                 class="action save primary"
                 id="add-new-task-button"
+                data-bind="click: addTask"
             >
                 <span data-bind="
                     i18n: 'Add Task',

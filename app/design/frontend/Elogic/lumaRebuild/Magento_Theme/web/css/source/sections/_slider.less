@@ -1,0 +1,96 @@
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common = true) {
+    .slider-wrapper {
+        .pagebuilder-overlay {
+            height: 700px;
+
+            .pagebuilder-poster-content {
+                padding: 0 176px;
+
+                div {
+                    overflow: inherit;
+                }
+            }
+
+            p {
+                font-style: normal;
+                font-weight: bold;
+                font-size: @font-size-16;
+                line-height: 20px;
+                text-transform: uppercase;
+                color: @color-dark-blue;
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                font-style: normal;
+                font-weight: 800;
+                font-size: @font-size-70;
+                line-height: 80px;
+                color: @color-dark-blue;
+                margin-bottom: 30px;
+
+                strong {
+                    color: @color-light-blue;
+                    display: block;
+                }
+            }
+
+            em {
+                font-style: normal;
+                text-transform: initial;
+                font-weight: 400;
+                font-size: @font-size-18;
+                line-height: 28px;
+                color: @color-dark-blue;
+                display: block;
+                max-width: 475px;
+                margin-bottom: 50px;
+            }
+
+
+            p {
+                a {
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: @font-size-14;
+                    line-height: 17px;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    color: @color-white;
+                    padding: 24px 97px;
+                    background: @color-light-blue;
+
+                    &:hover {
+                        text-decoration: none;
+                        background: linear-gradient(93.33deg, @color-light-blue 2.97%, @color-navy-blue 98.21%);
+                        box-shadow: 0 7px 30px rgba(11, 127, 192, 0.3);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+    @media only screen and (max-width: 375px) {
+
+    }
+}
+
+

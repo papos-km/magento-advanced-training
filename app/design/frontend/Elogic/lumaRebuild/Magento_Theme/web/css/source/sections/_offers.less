@@ -1,0 +1,159 @@
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common = true) {
+    .columns {
+        .left-col {
+            .discount-wrapper {
+                background: url('@{baseDir}images/imgdiscount.jpeg') no-repeat center center;
+                height: 770px;
+                width: 770px;
+                position: relative;
+
+                a {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-family: "@{baseDir}fonts/montserrat/CodeNext-ExtraBold";
+                    font-style: normal;
+                    font-weight: 800;
+                    font-size: @font-size-70;
+                    line-height: 80px;
+                    text-transform: uppercase;
+                    color: @color-white;
+                    width: 575px;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    span {
+                        display: block;
+                        color: @color-yellow;
+                    }
+                }
+            }
+        }
+
+        .right-col {
+
+            .products-men,
+            .products-women {
+                width: 740px;
+                height: 360px;
+                margin-left: 50px;
+                position: relative;
+
+                a {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-style: normal;
+                    font-weight: 800;
+                    font-size: @font-size-50;
+                    line-height: 60px;
+                    text-transform: uppercase;
+                    color: @color-white;
+                    width: 500px;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    span {
+                        display: block;
+                        color: @color-yellow;
+                    }
+                }
+            }
+
+            .products-men {
+                background: url('@{baseDir}images/offer-men.jpeg') no-repeat center center;
+                margin-bottom: 50px;
+
+                a {
+                    left: 85%;
+                }
+            }
+
+            .products-women {
+                background: url('@{baseDir}images/offer-women.jpeg') no-repeat center center;
+
+                a {
+                    left: 40%;
+                }
+            }
+        }
+    }
+
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    div.columns {
+        .left-col {
+            .discount-wrapper {
+                background: url('@{baseDir}images/discount-mobile.jpeg') no-repeat center center;
+                height: 220px;
+                width: 290px;
+                margin-bottom: 15px;
+
+                a {
+                    font-size: @font-size-30;
+                    line-height: 33px;
+                    width: 245px;
+                }
+            }
+        }
+
+        .right-col {
+
+            .products-men,
+            .products-women {
+                width: 290px;
+                height: 220px;
+                margin-left: 0;
+
+                a {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: @font-size-30;
+                    line-height: 33px;
+                    width: initial;
+                }
+            }
+
+            .products-men {
+                background: url('@{baseDir}images/offer-men-mobile.jpeg') no-repeat center center;
+                margin-bottom: 15px;
+
+                a {
+                    left: 65%;
+                }
+            }
+
+            .products-women {
+                background: url('@{baseDir}images/offer-women-mobile.jpeg') no-repeat center center;
+
+                a {
+                    left: 45%;
+                    width: 235px;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+

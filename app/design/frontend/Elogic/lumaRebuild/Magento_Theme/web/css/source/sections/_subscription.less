@@ -1,0 +1,170 @@
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common = true) {
+    div.page-wrapper {
+        .page-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 100%;
+            margin: 60px 0 120px;
+            padding: 0 220px;
+            height: 460px;
+            background: url('@{baseDir}images/email-bg.jpeg') center center;
+
+            .block {
+                max-width: initial;
+            }
+
+            .subscribe-message {
+                max-width: 415px;
+
+                .title {
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: @font-size-50;
+                    line-height: 60px;
+                    color: @color-dark-blue;
+                    margin-bottom: 30px;
+
+                    span {
+                        color: @color-light-blue;
+                    }
+                }
+
+                .text {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: @font-size-16;
+                    line-height: 26px;
+                    color: @color-dark-blue;
+                }
+            }
+
+            form.subscribe {
+
+                .field {
+                    max-width: initial;
+
+                    #newsletter {
+                        height: 65px;
+                        width: 575px;
+                    }
+
+                    .control {
+                        &:before {
+                            display: none;
+                        }
+                    }
+
+                }
+
+                .actions {
+                    .subscribe {
+                        border: none;
+                        padding: 24px 87px;
+                        background: @color-light-blue;
+
+                        &:hover {
+                            background: linear-gradient(93.33deg, @color-light-blue 2.97%, @color-navy-blue 98.21%);
+                            box-shadow: 0 7px 30px rgba(11, 127, 192, 0.3);
+                        }
+
+                        span {
+                            text-transform: uppercase;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: @font-size-14;
+                            line-height: 17px;
+                            letter-spacing: 0.05em;
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+    @media only screen and (max-width: 375px) {
+        div.page-wrapper {
+            div.page-bottom {
+                flex-direction: column;
+                margin: 0;
+                padding: 50px 0 0;
+                background: url('@{baseDir}images/email-bg-mobile.jpeg') no-repeat center center;
+
+                div.subscribe-block {
+
+                }
+
+                .block {
+                    max-width: initial;
+                }
+
+                .subscribe-message {
+                    padding: 30px 15px;
+
+                    .title {
+                        font-size: @font-size-25;
+                        line-height: 30px;
+                        margin-bottom: 15px;
+                    }
+
+                    .text {
+                        font-size: @font-size-14;
+                        line-height: 24px;
+                        max-width: 220px;
+                    }
+                }
+
+                .form.subscribe {
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 240px;
+
+                    .field {
+                        #newsletter {
+                            height: 55px;
+                            width: 290px;
+                        }
+
+
+                        .control {
+                            margin-left: 35px;
+                        }
+
+                    }
+
+                    .actions {
+                        .subscribe {
+                            padding: 19px 100px;
+                            border-radius: 0;
+                            margin: 15px 35px;
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+

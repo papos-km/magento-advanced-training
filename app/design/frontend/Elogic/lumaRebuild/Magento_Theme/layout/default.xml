@@ -11,7 +11,7 @@
     <move element="authorization-link" destination="header.right" after="top.search"/>
     <move element="compare-link-wrapper" destination="header.right" before="wish-list-link-custom" />
     <move element="page.top" destination="header.center" />
-    <move element="form.subscribe" destination="section.subscribe" />
+    <move element="form.subscribe" destination="page.bottom.container" />
 
     <!-- Header -->
     <referenceBlock name="store.menu">
@@ -47,8 +47,22 @@
         </container>
     </referenceContainer>
 
+    <!--  Page Bottom  -->
+<!--    <referenceContainer name="main.content">-->
+<!--        <block class="Magento\Cms\Block\Block" name="subscribe.wrapper">-->
+<!--            <arguments>-->
+<!--                <argument name="block_id" xsi:type="string">subscribe-wrapper</argument>-->
+<!--            </arguments>-->
+<!--        </block>-->
+<!--    </referenceContainer>-->
+
+
     <referenceContainer name="page.bottom.container">
-        <container name="section.subscribe" htmlTag="div" htmlClass="subscribe" />
+        <block class="Magento\Cms\Block\Block" name="subscribe.wrapper">
+            <arguments>
+                <argument name="block_id" xsi:type="string">subscribe-wrapper</argument>
+            </arguments>
+        </block>
     </referenceContainer>
 
     <!--  Footer  -->
